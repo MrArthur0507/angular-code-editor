@@ -11,6 +11,9 @@ import { MonacoEditorModule } from 'ngx-monaco-editor-v2';
   styleUrl: './editor.component.css'
 })
 export class EditorComponent {
+runCode() {
+  console.log(this.code);
+}
   editorOptions = {
     theme: 'vs-dark',  // Set the theme, e.g., 'vs-dark' or 'vs-light'
     language: 'c',     // Set the language to C
