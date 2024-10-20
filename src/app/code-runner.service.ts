@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CodeRunnerService {
-  private apiUrl = 'http://localhost:5227/api/Execute/execute';
+  private apiUrl = 'https://api.bpenchev.info/api/Execute/execute';
   constructor(private http: HttpClient) { }
   
 
