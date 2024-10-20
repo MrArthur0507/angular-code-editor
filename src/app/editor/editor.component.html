@@ -1,17 +1,40 @@
 <div class="container-fluid h-100">
     <div class="row h-100">
-      <div class="col-md-6 d-flex flex-column">
-        <button class="btn btn-success mt-3" (click)="runCode()">Run</button>
-        <ngx-monaco-editor 
-          [options]="editorOptions" 
-          [(ngModel)]="code" 
-          style="flex-grow: 1;">
-        </ngx-monaco-editor>
-      </div>
-  
-      <div class="col-md-6 d-flex align-items-end" style="background-color: #1e1e1e; padding: 20px;">
-        <h2 class="text-white mb-0">Output Area</h2> <!-- Placeholder for output -->
-      </div>
+        <!-- Code Editor Section -->
+        <div class="col-md-6 d-flex flex-column bg-light border-end">
+            <div class="d-flex justify-content-between align-items-center p-3">
+                <h5 class="mb-0">Code Editor</h5>
+                <button class="btn btn-success" (click)="runCode()">Run</button>
+            </div>
+            <ngx-monaco-editor 
+                [options]="editorOptions" 
+                [(ngModel)]="code" 
+                style="flex-grow: 1;">
+            </ngx-monaco-editor>
+        </div>
+
+        <!-- Output Section -->
+        <div class="col-md-6 d-flex flex-column align-items-center justify-content-start bg-dark text-white p-4">
+            <h2 class="mb-0">Output</h2>
+            <div class="w-100 border border-light rounded p-3 mt-2 mb-3" style="background-color: #2d2d2d; max-height: 50%; overflow-y: auto;">
+                <pre class="mb-0">{{ output }}</pre>
+            </div>
+        </div>
     </div>
-  </div>
-  
+
+    <!-- Response History Section -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="bg-secondary rounded p-3">
+                <h5 class="mb-3">Response History</h5>
+                <ul class="list-group">
+                    @for (response of responseHistory; track response) {
+                    <li class="list-group-item bg-dark text-white">
+                        {{ response }}
+                    </li>
+                }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

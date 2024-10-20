@@ -1,0 +1,18 @@
+/* styles.css */
+.container-fluid {
+    background-color: #f8f9fa; /* Light background for the whole container */
+}
+
+h2 {
+    font-size: 1.5rem; /* Larger font for the output title */
+}
+
+pre {
+    white-space: pre-wrap; /* Ensures that long lines of output wrap nicely */
+    word-break: break-word; /* Break words if they are too long */
+    max-height: 100%; /* Ensure the output doesn't overflow */
+}
+
+.bg-dark {
+    background-color: #1e1e1e !important; /* Dark background for the output section */
+}

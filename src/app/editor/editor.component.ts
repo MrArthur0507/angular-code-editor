@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { MonacoEditorModule } from 'ngx-monaco-editor-v2';
+import { CodeRunnerService } from '../code-runner.service';
 
 @Component({
   selector: 'app-editor',
@@ -11,13 +12,23 @@ import { MonacoEditorModule } from 'ngx-monaco-editor-v2';
   styleUrl: './editor.component.css'
 })
 export class EditorComponent {
+
+  constructor(private codeRunnerService : CodeRunnerService) {}
+
+output : string = '';
+responseHistory: string[] = [];
 runCode() {
-  console.log(this.code);
+  this.codeRunnerService.runCode(this.code).subscribe(response => {
+    this.output = response;
+    this.responseHistory.unshift(response);
+  })
 }
+
   editorOptions = {
-    theme: 'vs-dark',  // Set the theme, e.g., 'vs-dark' or 'vs-light'
-    language: 'c',     // Set the language to C
-    minimap: { enabled: true } // Enable or disable the minimap
+    theme: 'vs-dark',  
+    language: 'c',     
+    minimap: { enabled: false } ,
+    
   };
 
   code = `
