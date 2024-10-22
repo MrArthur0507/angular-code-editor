@@ -1,18 +1,26 @@
-/* styles.css */
-.container-fluid {
-    background-color: #f8f9fa; /* Light background for the whole container */
-}
+.monaco-editor {
+    height: 30vh; 
+    border-radius: 0.25rem;
+  }
 
-h2 {
-    font-size: 1.5rem; /* Larger font for the output title */
-}
+  .card-body {
+    padding: 0 !important;
+  }
 
-pre {
-    white-space: pre-wrap; /* Ensures that long lines of output wrap nicely */
-    word-break: break-word; /* Break words if they are too long */
-    max-height: 100%; /* Ensure the output doesn't overflow */
-}
+  .card {
+    border: 1px solid #555;
+    border-radius: 0.375rem;
+  }
 
-.bg-dark {
-    background-color: #1e1e1e !important; /* Dark background for the output section */
-}
+  .bg-dark {
+    background-color: #2d2d2d !important;
+  }
+
+  .btn-primary {
+    background-color: #007bff; 
+    border-color: #007bff; 
+  }
+
+  .output-display {
+    height: 20vh; 
+  }

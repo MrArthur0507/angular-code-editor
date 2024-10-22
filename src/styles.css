@@ -1,3 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
 
+body {
+    background-color: #121212; 
+    color: #ffffff; 
+  }
+  
+  
+  .container {
+    background-color: rgba(18, 18, 18, 0.9); 
+    border-radius: 0.5rem; 
+    padding: 1rem;
+  }
